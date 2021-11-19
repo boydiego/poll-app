@@ -1,0 +1,14 @@
+<h1>New Poll</h1>
+
+<%= form_with model: @poll do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+    <% @poll.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
