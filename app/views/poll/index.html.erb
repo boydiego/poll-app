@@ -1,9 +1,9 @@
-<h1>poll index view works</h1>
+<h1>Polls</h1>
 
 <ul>
   <% @polls.each do |poll| %>
     <li>
-      <%= poll.title %>
+      <%= link_to poll.title, poll %>
     </li>
   <% end %>
 </ul>
