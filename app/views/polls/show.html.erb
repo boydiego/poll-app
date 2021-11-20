@@ -6,20 +6,9 @@
 </ul>
 
 <h1>Select your answer:</h1>
-<% @poll.answers.each do |answer| %>
-  <p>
-    <%= answer.title %>
-  </p>
-<% end %>
+<%= render @poll.answers %>
 
-<h5>Add a possible answer to for your question:</h5>
-<%= form_with model: [ @poll, @poll.answers.build ] do |f| %>
-  <p>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<h5>Add a possible answer to your question:</h5>
+<%= render 'answers/form' %>
 
 <li><%= link_to "Polls", root_path %></li>
