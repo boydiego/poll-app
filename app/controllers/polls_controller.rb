@@ -35,6 +35,13 @@ class PollsController < ApplicationController
     end
   end
   
+  def destroy
+    @poll = Poll.find(params[:id])
+    @poll.destroy
+
+    redirect_to root_path
+  end
+  
   private
 
   def poll_params
