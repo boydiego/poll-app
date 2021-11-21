@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  devise_for :users
   root 'polls#index'
   resources :polls do
     resources :answers

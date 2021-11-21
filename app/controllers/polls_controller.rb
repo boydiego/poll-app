@@ -1,4 +1,7 @@
 class PollsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+  skip_before_action :authenticate_user!, only: %i[show]
+
   def index
     @polls = Poll.all
   end
