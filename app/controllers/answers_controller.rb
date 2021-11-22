@@ -7,7 +7,7 @@ class AnswersController < ApplicationController
     else
       @answer.upvote_by current_user
     end
-    # render "vote.js.erb"
+    render "vote.js.erb"
   end
   
 

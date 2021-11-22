@@ -1,9 +1,12 @@
 <%= content_tag "div", id: "upvote-#{answer.id}" do %>
-  <%= link_to upvote_poll_answer_path(answer), method: :patch, remote: true, data: { disable_with: "voting..." } do %>
-    <% if current_user.voted_up_on? answer %>
-      unvote
-    <% else %>
-      vote
+  <%= link_to upvote_poll_answer_path(answer), method: :patch, remote: true do %>
+    <% if user_signed_in? %>
+      <% if current_user.voted_up_on? answer %>
+        unvote
+      <% else %>
+        vote
+      <% end %>
     <% end %>
+
   <% end %>
 <% end %>
