@@ -1,7 +1,8 @@
 class AnswersController < ApplicationController
+
   def upvote
-    @poll = Poll.find(params[:poll_id])
-    @answer = @poll.answers.find(params[:id])
+    @poll = Poll.find(params[:id])
+    @answer = @poll.answers.find(params[:poll_id])
     if current_user.voted_up_on? @answer
       @answer.unvote_by current_user
     else
