@@ -15,7 +15,8 @@ class PollsController < ApplicationController
   end
   
   def create
-    @poll = Poll.new(poll_params)
+    # @poll = Poll.new(poll_params)
+    @poll = current_user.polls.build(poll_params)
 
     if @poll.save
       redirect_to @poll
