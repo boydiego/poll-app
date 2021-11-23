@@ -1,1 +1,2 @@
 document.getElementById("upvote-<%= @answer.id %>").innerHTML = "<%= j render "answers/upvote_link", answer: @answer %>";
+window.location.reload()
