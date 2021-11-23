@@ -4,21 +4,21 @@ class AnswersController < ApplicationController
     @poll = Poll.find(params[:id])
     @answer = @poll.answers.find(params[:poll_id])
 
-    if current_user.voted_up_on? @answer
-      flash.alert = "You removed your vote."
-      @answer.unvote_by current_user
-    else
+    # if current_user.voted_up_on? @answer
+    #   flash.alert = "You removed your vote."
+    #   @answer.unvote_by current_user
+    # else
       flash.notice = "Thank you for voting."
       @answer.upvote_by current_user
-    end
+    # end
     render "vote.js.erb"
   end
   
-
   def create
     @poll = Poll.find(params[:poll_id])
     @answer = @poll.answers.create(answer_params)
-    redirect_to poll_path(@poll)
+    render "_form.html.erb"
+    # redirect_to poll_path(@poll)
   end
 
   def destroy

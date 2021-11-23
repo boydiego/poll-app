@@ -6,9 +6,15 @@
 </ul>
 
 <h1>Select your answer:</h1>
-<%= render @poll.answers %>
+<% answers_amount = @poll.answers.size %>
+<% if answers_amount == 0%>
+  <h5>Add a possible answer to your question:</h5>
+  <%= render 'answers/form' %>
+<% end %>
 
-<h5>Add a possible answer to your question:</h5>
-<%= render 'answers/form' %>
+<% if answers_amount > 0 %>
+  <%= render @poll.answers %>
+<% end %>
 
-<li><%= link_to "Polls", root_path %></li>
+
+<li><%= link_to "See all Polls", root_path %></li>
