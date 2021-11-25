@@ -34,7 +34,12 @@
   %>
 
     <div class="menu-navigation">
-      <%= link_to "New Poll", new_poll_path %>
+      <% if user_signed_in? %>
+        <% if current_user.admin %>
+          <%= link_to "New Poll", new_poll_path %>
+        <% end %>
+      <% end %>
+
 
       <% if user_signed_in? %>
         <span>Logged in as: <%= current_user.email %></span>

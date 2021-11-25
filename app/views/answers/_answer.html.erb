@@ -1,8 +1,15 @@
 <p>
   <%= answer.title %>
-  <%= render "answers/upvote_link", answer: answer %>
+  
+  <% if user_signed_in? %>
+    <%= render "answers/upvote_link", answer: answer %>
+  <% end %>
 </p>
 
-<p>
-  <%= link_to 'Destroy Answer', [answer.poll, answer], method: :delete, data: { confirm: "Are you sure?"} %>
-</p>
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+    <p>
+      <%= link_to 'Destroy Answer', [answer.poll, answer], method: :delete, data: { confirm: "Are you sure?"} %>
+    </p>
+  <% end %>
+<% end %>

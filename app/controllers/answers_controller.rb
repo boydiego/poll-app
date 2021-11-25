@@ -4,13 +4,11 @@ class AnswersController < ApplicationController
     @poll = Poll.find(params[:id])
     @answer = @poll.answers.find(params[:poll_id])
 
-    # if current_user.voted_up_on? @answer
-    #   flash.alert = "You removed your vote."
-    #   @answer.unvote_by current_user
-    # else
+    if user_signed_in?
       flash.notice = "Thank you for voting."
       @answer.upvote_by current_user
-    # end
+    end
+
     render "vote.js.erb"
   end
   
