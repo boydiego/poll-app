@@ -1,9 +1,13 @@
 <h1><%= @poll.title %></h1>
 
-<ul>
-  <li><%= link_to "Edit", edit_poll_path(@poll) %></li>
-  <li><%= link_to "Destroy", poll_path(@poll), method: :delete, data: { confirm: "Are you sure?"} %></li>
-</ul>
+<% if user_signed_in? %>
+  <% if current_user.admin %>
+    <ul>
+      <li><%= link_to "Edit", edit_poll_path(@poll) %></li>
+      <li><%= link_to "Destroy", poll_path(@poll), method: :delete, data: { confirm: "Are you sure?"} %></li>
+    </ul>
+  <% end %>
+<% end %>
 
 <h1>Select your answer:</h1>
 <% answers_amount = @poll.answers.size %>
@@ -13,7 +17,19 @@
 <% end %>
 
 <% if answers_amount > 0 %>
-  <%= render @poll.answers %>
+
+  <% if user_signed_in? %>
+    <% user_votes = current_user.votes.up.votables.size %>
+    <% if user_votes > 0 %>
+      <%= render 'polls/thanks' %>
+    <% else %>
+      <%= render @poll.answers %>
+    <% end %>
+  <% else %>
+    <%= render @poll.answers %>
+  <% end %>
+
+
 <% end %>
 
 

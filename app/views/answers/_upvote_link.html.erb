@@ -1,8 +1,10 @@
 <%= content_tag "div", id: "upvote-#{answer.id}" do %>
-  <%= link_to upvote_poll_answer_path(answer), method: :patch, remote: true do %>
-    
+  <%= link_to upvote_poll_answer_path(answer), method: :patch, remote: true do %>    
+
     <% if user_signed_in? %>
       vote
+    <% else %>
+      <%= "Sign in to vote!" %>
     <% end %>
 
   <% end %>
