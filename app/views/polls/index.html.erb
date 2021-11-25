@@ -1,12 +1,29 @@
-<h1>Polls</h1>
-
-<ul>
-  <% @polls.each do |poll| %>
-    <li>
-      <%= link_to poll.title, poll %>
-    </li>
+<% if user_signed_in? %>
+  <%# signed in as admin %>
+  <% if current_user.admin %>
+    <h1>Polls lined up</h1>
+    <ul>
+      <% @polls.each do |poll| %>
+        <li>
+          <%= link_to poll.title, poll %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+  <%# signed in as normal user %>
+    <h1>Poll</h1>
+    <% current_poll = @polls.first %>
+    <%= link_to current_poll.title, current_poll %>
   <% end %>
-</ul>
+
+<% else %>
+  <%# if not signed in %>
+  <h1>Poll</h1>
+  <% current_poll = @polls.first %>
+  <%= link_to current_poll.title, current_poll %>
+<% end %>
+
+
 
 <% if user_signed_in? %>
   <% if current_user.admin %>
