@@ -1,64 +1,66 @@
-<h1><%= @poll.title %></h1>
-
-<% if user_signed_in? %>
-  <% if current_user.admin %>
-    <ul>
-      <li><%= link_to "Edit", edit_poll_path(@poll) %></li>
-      <li><%= link_to "Destroy", poll_path(@poll), method: :delete, data: { confirm: "Are you sure?"} %></li>
-    </ul>
-  <% end %>
-<% end %>
-
-<h1>Select your answer:</h1>
-<% answers_amount = @poll.answers.size %>
-<% if answers_amount == 0%>
-  <h5>Add a possible answer to your question:</h5>
-  <%= render 'answers/form' %>
-<% end %>
-
-<% if answers_amount > 0 %>
-
-  <% if user_signed_in? %>
-    <% user_votes = current_user.votes.up.votables.size %>
-    <% if user_votes > 0 %>
-      <%= render 'polls/thanks' %>
-    <% else %>
-      <%= render @poll.answers %>
-    <% end %>
-  <% else %>
-    <%= render @poll.answers %>
-  <% end %>
-
+<div class="show-container">
+  
+  <h1><%= @poll.title %></h1>
 
   <% if user_signed_in? %>
     <% if current_user.admin %>
-      <canvas id="myChart"></canvas>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Votes</th>
-            <th>Answers</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @poll.answers.each do |answer| %>
-            <% if answer.votes_for.size > 0 %>
-              <tr>
-                <td class="answer-votes"><%= answer.votes_for.size %></td>
-                <td class="answer-title"><%= answer.title %></td>
-              </tr>
-            <% end %>
-          <% end %>
-        
-        </tbody>
-      </table>
+      <ul>
+        <li><%= link_to "Edit", edit_poll_path(@poll) %></li>
+        <li><%= link_to "Destroy", poll_path(@poll), method: :delete, data: { confirm: "Are you sure?"} %></li>
+      </ul>
     <% end %>
   <% end %>
 
+  <h3>Select your answer:</h3>
 
-<% end %>
+  <% answers_amount = @poll.answers.size %>
+  <% if answers_amount == 0%>
+    <h5>Add a possible answer to your question:</h5>
+    <%= render 'answers/form' %>
+  <% end %>
 
+  <% if answers_amount > 0 %>
+    <% if user_signed_in? %>
+      <% user_votes = current_user.votes.up.votables.size %>
+      <% if user_votes > 0 %>
+        <%= render 'polls/thanks' %>
+      <% else %>
+        <%= render @poll.answers %>
+      <% end %>
+    <% else %>
+      <%= render @poll.answers %>
+    <% end %>
+  
 
-<li><%= link_to "See all Polls", root_path %></li>
+    <% if user_signed_in? %>
+      <% if current_user.admin %>
+          <canvas id="myChart" aria-label="Focus Polls Results" role="img"></canvas>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Votes</th>
+                  <th>Answers</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @poll.answers.each do |answer| %>
+                  <% if answer.votes_for.size > 0 %>
+                    <tr>
+                      <td class="answer-votes"><%= answer.votes_for.size %></td>
+                      <td class="answer-title"><%= answer.title %></td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              
+              </tbody>
+            </table>
+      <% end %>
+    <% end %>
+
+  <% end %>
+
+  <%= link_to "Home", root_path, class: "homelink" %>
+
+</div>

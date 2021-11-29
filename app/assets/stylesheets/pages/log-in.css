@@ -1,0 +1,22 @@
+.container .new_user, .field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.container .new_user .field > input {
+  width: 70%;
+  border-radius: 5px;
+  border-color: var(--primary-color);
+ }
+
+ .container .new_user .actions {
+   padding: 1rem 0;
+ }
+ .container .new_user .actions > input {
+   padding: 0.3rem 2rem;
+   border-radius: 5px;
+   border-color: var(--primary-color);
+ }

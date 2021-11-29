@@ -1,0 +1,26 @@
+.container > form {
+  width: 100%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem; */
+}
+
+.container > form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  width: 100%;
+ }
+
+ .container > form > div > input {
+   width: 70%;
+   border-radius: 5px;
+   border-color: var(--primary-color);
+ }
+
+ .container > form > div:last-child > input {
+  width: 20%;
+  padding: 0.5rem 0;
+}
