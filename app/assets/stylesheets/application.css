@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "shared/navbar.css";
+ @import "shared/root.css";
+ @import "pages/index.css";
+ @import "pages/show-poll.css";
+ @import "pages/log-in.css";
+ @import "pages/new-poll.css";
+
+
+ * {
+  padding: 0;
+  margin: 0;
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-size: large;
+  color: var(--primary-text);
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+ li {
+   list-style: none;
+ }
+
+ body {
+  background-color: var(--primary-color);
+ }
+
+ .container {
+  padding: 2.5% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }

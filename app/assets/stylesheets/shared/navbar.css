@@ -1,7 +1,26 @@
+.navbar-container {
+  background-color: var(--primary-color);
+  height: 72px;
+  border-bottom: solid 2.5px var(--secondary-color);
+}
 
 .navbar-container .navbar {
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-container .navbar .logo > i:hover {
+  transition: 400ms;
+  color: var(--secondary-color);
+}
+
+.navbar-container .navbar .menu-navigation a, span {
+  padding-left: 1rem;
+}
+
+.navbar-container .navbar .menu-navigation .logIn > i:hover {
+  transition: 400ms;
+  color: var(--secondary-color);
 }

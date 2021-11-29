@@ -19,19 +19,10 @@
 <div class="navbar-container">
   <div class="navbar">
     <div class="navbar-logo">
-      <%= link_to "/" do %>
+      <%= link_to root_path, class: "logo" do %>
         <i class="far fa-comments fa-2x"></i>
       <% end %>
     </div>
-
-  <%#
-    logo > link home          // done
-    link create poll          // done
-    link dashboard            //
-    link log in               // done
-    link log out              // done
-    link sign in              // done
-  %>
 
     <div class="menu-navigation">
       <% if user_signed_in? %>
@@ -39,20 +30,21 @@
           <%= link_to "New Poll", new_poll_path %>
         <% end %>
       <% end %>
+    </div>
 
-
+    <div class="menu-navigation">
       <% if user_signed_in? %>
-        <span>Logged in as: <%= current_user.email %></span>
+        <span>Logged in as: <strong><%= current_user.email %></strong></span>
         <%= link_to "Account Settings", edit_user_registration_path %>
         <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
       <% end %>
 
       <% if !user_signed_in? %>
-        <%= link_to "Log In", new_user_session_path %>
+        <%= link_to new_user_session_path, class: "logIn" do %>
+          <i class="far fa-user-circle fa-2x"></i>
+        <% end %>
       <% end %>
 
-      <%# <i class="fas fa-chart-pie fa-lg"></i> %>
-      <%# <i class="fas fa-bars fa-lg"></i> %>
     </div>
 
 

@@ -1,32 +1,34 @@
-<% if user_signed_in? %>
-  <%# signed in as admin %>
-  <% if current_user.admin %>
-    <h1>Polls lined up</h1>
-    <ul>
-      <% @polls.each do |poll| %>
-        <li>
-          <%= link_to poll.title, poll %>
-        </li>
-      <% end %>
-    </ul>
+<div class="index-container">
+  <% if user_signed_in? %>
+    <%# signed in as admin %>
+    <% if current_user.admin %>
+      <h1>Polls lined up</h1>
+      <ul>
+        <% @polls.each do |poll| %>
+          <li>
+            <%= link_to poll.title, poll %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+    <%# signed in as normal user %>
+      <h1>Focus Poll</h1>
+      <% current_poll = @polls.first %>
+      <%= link_to current_poll.title, current_poll %>
+    <% end %>
+
   <% else %>
-  <%# signed in as normal user %>
-    <h1>Poll</h1>
+    <%# if not signed in %>
+    <h1>Focus Poll</h1>
     <% current_poll = @polls.first %>
     <%= link_to current_poll.title, current_poll %>
   <% end %>
 
-<% else %>
-  <%# if not signed in %>
-  <h1>Poll</h1>
-  <% current_poll = @polls.first %>
-  <%= link_to current_poll.title, current_poll %>
-<% end %>
 
 
-
-<% if user_signed_in? %>
-  <% if current_user.admin %>
-    <%= link_to "New Poll", new_poll_path %>
+  <% if user_signed_in? %>
+    <% if current_user.admin %>
+      <%= link_to "New Poll", new_poll_path %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
