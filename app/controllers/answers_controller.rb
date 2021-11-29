@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class AnswersController < ApplicationController  
 
   def upvote
     @poll = Poll.find(params[:id])
