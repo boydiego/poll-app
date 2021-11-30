@@ -1,24 +1,102 @@
 .show-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border: 5px solid var(--primary-color);
+  border-radius: 7px;
+}
+
+.show-container > ul {
+  display: flex;
+  justify-content: center;
+}
+
+.show-container > ul > li {
+  padding: 0 10px 30px;
 }
 
 .show-container > h1 {
-  padding: 0 0 2rem 0;
+  padding: 1rem 0 2rem 0;
   font-size: xx-large;
 }
 
-.show-container > h3, p {
-  padding: 0 0 0.5rem 0;
+.show-container > h3 {
+  padding: 0 0 1rem 0;
+  font-weight: 500;
 }
 
-.show-container .homelink {
+.show-container > h5, p, li {
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+.show-container > form > p {
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+.show-container > h1, h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.show-container #answer_title {
+  padding-left: 10px;
+  border-radius: 5px;
+  border-color: var(--primary-color);
+}
+
+.show-container .answer-box {
+  border-top: 1px solid var(--primary-color);
+  padding: 2vh 3vw;
+  display: flex;
+  justify-content: center;
+  transition: 300ms;
+}
+
+.show-container .vote-btn {
+  position: absolute;
+  top: 2vh;
+  right: 3vw;
+}
+
+.show-container > form > p:nth-last-child(2) > input {
+  background-color: var(--create-btn);
+  border-radius: 5px;
+  padding: 0.3rem 2rem;
+  color: white;
+}
+
+.show-container .admin-show-wrapper {
+  position: relative;
+}
+
+.show-container .admin-show-wrapper .delete-answer {
+  position: absolute;
+  top: 2vh;
+}
+
+.show-container .answer-box:hover, .vote-btn:hover > a, .delete-answer:hover > a {
+  transition: 300ms;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+.homelink {
   padding: 0.3rem 0.5rem 0.6rem 0.6rem;
-}
-
-.show-container .homelink:hover {
+  display: flex;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  margin: 0 46%;
   transition: 400ms;
   clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-  background-color: var(--secondary-color);
+}
+
+.homelink:hover {
+  transition: 400ms;
+  background-color: var(--primary-color);
+}
+
+.show-container .thank-you-notice {
+  padding: 0 4vw 4vh;
 }

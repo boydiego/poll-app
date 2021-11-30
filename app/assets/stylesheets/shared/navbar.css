@@ -1,11 +1,12 @@
 .navbar-container {
   background-color: var(--primary-color);
-  height: 72px;
-  border-bottom: solid 2.5px var(--secondary-color);
+  height: 76px;
+  /* border-bottom: solid 2.5px var(--secondary-color); */
 }
 
 .navbar-container .navbar {
-  padding: 1rem;
+  height: 100%;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

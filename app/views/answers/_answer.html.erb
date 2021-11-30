@@ -1,15 +1,17 @@
-<p>
-  <%= answer.title %>
-  
-  <% if user_signed_in? %>
-    <%= render "answers/upvote_link", answer: answer %>
-  <% end %>
-</p>
+<div class="admin-show-wrapper">
+  <p class="answer-box">
+    <%= answer.title %>
 
-<% if user_signed_in? %>
-  <% if current_user.admin %>
-    <p>
-      <%= link_to 'Destroy Answer', [answer.poll, answer], method: :delete, data: { confirm: "Are you sure?"} %>
-    </p>
+    <% if user_signed_in? %>
+      <%= render "answers/upvote_link", answer: answer %>
+    <% end %>
+  </p>
+
+  <% if user_signed_in? %>
+    <% if current_user.admin %>
+      <p class="delete-answer">
+        <%= link_to 'Destroy Answer', [answer.poll, answer], method: :delete, data: { confirm: "Are you sure?"} %>
+      </p>
+    <% end %>
   <% end %>
-<% end %>
+</div>

@@ -2,6 +2,8 @@
   --primary-color: #AFD0BF;
   --secondary-color: #e2efde;
   --primary-text: #00171F;
+  --delete-btn: rgba(255, 99, 71, 0.596);
+  --create-btn: rgba(0, 0, 255, 0.438);
 
   /* --font-family: 'Open Sans', sans-serif; */
   --font-family: Century, Helvetica, Arial, sans-serif;
