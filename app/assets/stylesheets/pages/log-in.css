@@ -1,3 +1,21 @@
+.container > h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.container .edit_user .field #user_email, #user_password, #user_password_confirmation, #user_current_password {
+  padding: 0 10px;
+}
+
+.container .new_user .field #user_email, #user_password {
+  padding: 0 10px;
+}
+
+.container .actions > input {
+  background-color: var(--create-btn);
+  color: white;
+}
+
 .container .new_user, .field {
   width: 100%;
   display: flex;
@@ -14,9 +32,27 @@
 
  .container .new_user .actions {
    padding: 1rem 0;
+  }
+  .container .new_user .actions > input {
+    padding: 0.3rem 2rem;
+    border-radius: 5px;
+    border-color: var(--primary-color);
+    background-color: var(--create-btn);
+    color: white;
+  }
+
+ .container > form .actions {
+   padding-bottom: 60px;
  }
- .container .new_user .actions > input {
-   padding: 0.3rem 2rem;
+
+ .container .button_to {
+  display: flex;
+  justify-content: center;
+ }
+
+ .container .button_to > input {
+   padding: 0.1rem 1rem;
    border-radius: 5px;
    border-color: var(--primary-color);
+   background-color: var(--delete-btn);
  }

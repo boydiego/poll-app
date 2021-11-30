@@ -14,37 +14,60 @@
  *= require_self
  */
 
- @import "shared/navbar.css";
- @import "shared/root.css";
- @import "pages/index.css";
- @import "pages/show-poll.css";
- @import "pages/log-in.css";
- @import "pages/new-poll.css";
+@import "shared/navbar.css";
+@import "shared/root.css";
+@import "pages/index.css";
+@import "pages/show-poll.css";
+@import "pages/log-in.css";
+@import "pages/new-poll.css";
 
 
- * {
+* {
   padding: 0;
   margin: 0;
   font-family: 'Zen Kurenaido', sans-serif;
   font-size: large;
   color: var(--primary-text);
- }
+}
 
- a {
-   text-decoration: none;
- }
+a {
+  text-decoration: none;
+}
 
- li {
-   list-style: none;
- }
+li {
+  list-style: none;
+}
 
- body {
-  background-color: var(--primary-color);
- }
+body {
+  background-color: var(--secondary-color);
+  position: relative;
+}
 
- .container {
-  padding: 2.5% 10%;
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
- }
+  /* height: 80vh; */
+  width: 80vw;
+  margin-top: 5vh;
+  margin-left: 10vw;
+}
+
+
+/* notice, alert */
+.notice, .alert {
+  position: absolute;
+  top: 38px;
+  width: 50%;
+  left: 25%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgb(45 55 68 / 10%);
+  border-radius: 5px;
+  padding: 1rem;
+}

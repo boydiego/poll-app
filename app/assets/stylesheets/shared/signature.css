@@ -1,0 +1,14 @@
+.signature {
+  display: flex;
+  justify-content: center;
+  padding: 30vh 0 20px;
+  /* height: 10vh; */
+}
+
+.signature ruby, rt {
+  font-weight: 600;
+}
+
+.signature ruby rt {
+  font-size: .7rem;
+}

@@ -20,10 +20,17 @@
 
   <body>
     <%= render partial: 'shared/navbar' %>
+
+    <% flash.each do |type, msg| %>
+      <div class="notice alert">
+        <%= msg %>
+      </div>
+    <% end %>
+
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+
+    <%= render partial: 'shared/signature' %>
   </body>
 </html>
