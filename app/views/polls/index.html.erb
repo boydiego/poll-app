@@ -14,16 +14,38 @@
     <%# signed in as normal user %>
       <h1>Focus Poll</h1>
       <% current_poll = @polls.first %>
-      <%= link_to current_poll.title, current_poll, class: "current-focus-poll-loggedIn" %>
+      <% if @polls.length > 0 %>
+        <%= link_to current_poll.title, current_poll, class: "current-focus-poll-loggedIn" %>
+      <% else %>
+        <span class="current-focus-poll">
+          Hi <%= current_user.username %> 👋
+        </span>
+        <br>
+        <span class="current-focus-poll">
+          No polls are life right now.
+        </span>
+        <span class="current-focus-poll">
+          Please check again later.
+        </span>
+      <% end %>
     <% end %>
 
   <% else %>
     <%# if not signed in %>
     <h1>Focus Poll</h1>
     <% current_poll = @polls.first %>
-    <span class="current-focus-poll">
-      <%= link_to current_poll.title, current_poll %>
-    </span>
+    <% if @polls.length > 0 %>
+      <span class="current-focus-poll">
+        <%= link_to current_poll.title, current_poll %>
+      </span>
+    <% else %>
+      <span class="current-focus-poll">
+        No polls are life right now.
+      </span>
+      <span class="current-focus-poll">
+        Please check again later.
+      </span>
+    <% end %>
   <% end %>
 
 
