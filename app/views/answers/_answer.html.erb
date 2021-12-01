@@ -3,7 +3,9 @@
     <%= answer.title %>
 
     <% if user_signed_in? %>
-      <%= render "answers/upvote_link", answer: answer %>
+      <% if !current_user.admin %>
+        <%= render "answers/upvote_link", answer: answer %>
+      <% end %>
     <% end %>
   </p>
 

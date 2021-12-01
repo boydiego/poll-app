@@ -9,17 +9,35 @@
   font-size: xx-large;
 }
 
-.index-container > a:hover {
+.current-focus-poll {
+  padding-right: 1rem;
+}
+
+.current-focus-poll > a:hover, .current-focus-poll-loggedIn:hover {
   font-weight: 600;
+}
+
+.index-container .participate {
+  font-size: medium;
 }
 
 
 /* admin only index */
 
-.index-container > ul > li {
+.index-container .new-poll:hover {
+  font-weight: 600;
+}
+
+.index-container .current-polls .lined-up-poll {
   padding: 0 0 0.5rem 0;
 }
 
-.index-container > ul {
+.index-container .current-polls {
   padding: 0 0 2rem 0;
+}
+
+.index-container .current-polls .lined-up-poll:nth-child(2) {
+  margin-top: 10px;
+  border-top: 1px solid var(--primary-color);
+  padding-top: 10px;
 }

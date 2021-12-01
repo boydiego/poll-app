@@ -16,6 +16,9 @@
 
 @import "shared/navbar.css";
 @import "shared/root.css";
+@import "shared/signature.css";
+@import "shared/alerts.css";
+
 @import "pages/index.css";
 @import "pages/show-poll.css";
 @import "pages/log-in.css";
@@ -52,22 +55,4 @@ body {
   width: 80vw;
   margin-top: 5vh;
   margin-left: 10vw;
-}
-
-
-/* notice, alert */
-.notice, .alert {
-  position: absolute;
-  top: 38px;
-  width: 50%;
-  left: 25%;
-  display: flex;
-  justify-content: center;
-  background-color: rgba(255,255,255,0.1);
-  backdrop-filter: blur(30px);
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgb(45 55 68 / 10%);
-  border-radius: 5px;
-  padding: 1rem;
 }
