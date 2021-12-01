@@ -1,6 +1,6 @@
 .notice, .alert {
   position: absolute;
-  top: 55px;
+  top: 53px;
   width: 50%;
   left: 25%;
   display: flex;
@@ -11,5 +11,5 @@
   background-clip: padding-box;
   box-shadow: 10px 10px 10px rgb(45 55 68 / 10%);
   border-radius: 5px;
-  padding: 1rem;
+  padding: 0.7rem;
 }

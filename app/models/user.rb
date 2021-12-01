@@ -8,4 +8,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   acts_as_voter
+
+  def username
+    email.split('@')[0].capitalize
+  end
+  
 end
