@@ -44,6 +44,13 @@ document.addEventListener('turbolinks:load', () => {
         },
         options: {
             indexAxis: 'y',
+            scales: {
+                x: {
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
         }
     });
 
