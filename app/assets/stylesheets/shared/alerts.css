@@ -9,7 +9,7 @@
   backdrop-filter: blur(30px);
   border: 2px solid transparent;
   background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgb(45 55 68 / 10%);
+  box-shadow: 10px 10px 10px rgba(45, 55, 68, 0.10);
   border-radius: 5px;
   padding: 0.7rem;
 }
