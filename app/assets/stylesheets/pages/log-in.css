@@ -11,10 +11,10 @@
   padding: 0 10px;
 }
 
-.container .actions > input {
+/* .container .actions > input {
   background-color: var(--create-btn);
   color: white;
-}
+} */
 
 .container .new_user, .field {
   width: 100%;
@@ -39,6 +39,8 @@
     border-color: var(--primary-color);
     background-color: var(--create-btn);
     color: white;
+    cursor: pointer;
+    width: 35%;
   }
 
  .container > form .actions {
@@ -55,4 +57,5 @@
    border-radius: 5px;
    border-color: var(--primary-color);
    background-color: var(--delete-btn);
+   cursor: pointer;
  }

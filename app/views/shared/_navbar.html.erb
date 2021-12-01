@@ -16,7 +16,7 @@
 
     <div class="menu-navigation">
       <% if user_signed_in? %>
-        <span>Logged in as: <strong><%= current_user.email %></strong></span>
+        <span>Logged in as: <strong><%= current_user.username %></strong></span>
         <%= link_to edit_user_registration_path, class: "nav-settings" do %>
           <i class="fas fa-cog fa-2x"></i>
         <% end %>

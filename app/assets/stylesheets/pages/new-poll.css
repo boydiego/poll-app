@@ -26,6 +26,7 @@
   padding: 0.5rem 0;
   background-color: var(--create-btn);
   color: white;
+  cursor: pointer;
 }
 
 .container > form #answer_title {
