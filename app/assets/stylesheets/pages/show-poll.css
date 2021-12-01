@@ -4,20 +4,49 @@
   flex-direction: column;
   border: 5px solid var(--primary-color);
   border-radius: 7px;
+  position: relative;
 }
 
-.show-container > ul {
+.show-container .poll-settings {
+  /* padding: 0 10px 30px; */
+  position: absolute;
+  top: 2rem;
+  left: 0;
+}
+
+.poll-settings .edit-poll > a:hover, .delete-poll > a:hover {
+  font-weight: 600;
+}
+
+.show-container .poll-title {
+  padding: 1rem 0 2rem 0;
   display: flex;
   justify-content: center;
 }
 
-.show-container > ul > li {
-  padding: 0 10px 30px;
+
+.show-container .poll-title > h1 {
+  font-size: xx-large;
 }
 
-.show-container > h1 {
-  padding: 1rem 0 2rem 0;
-  font-size: xx-large;
+.show-container .participate {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+}
+
+.participate {
+  padding-bottom: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #afd0bf94, inset 0 0 20px #afd0bf94;
+}
+
+.participate .participate-msg {
+  padding: 1rem 1rem;
+}
+
+.participate-msg, .participate-inner-msg {
+  font-size: medium;
 }
 
 .show-container > h3 {
@@ -25,7 +54,7 @@
   font-weight: 500;
 }
 
-.show-container > h5, p, li {
+.show-container > h5, .delete-answer, .edit-poll, .delete-poll {
   padding-left: 50px;
   padding-bottom: 20px;
 }
@@ -58,6 +87,7 @@
   position: absolute;
   top: 2vh;
   right: 3vw;
+  transition: 300ms;
 }
 
 .show-container > form > p:nth-last-child(2) > input {
@@ -74,6 +104,7 @@
 .show-container .admin-show-wrapper .delete-answer {
   position: absolute;
   top: 2vh;
+  transition: 300ms;
 }
 
 .show-container .answer-box:hover, .vote-btn:hover > a, .delete-answer:hover > a {
@@ -99,4 +130,63 @@
 
 .show-container .thank-you-notice {
   padding: 0 4vw 4vh;
+}
+
+
+
+/* admin section */
+
+.show-container .poll-settings {
+  display: flex;
+  justify-content: center;
+}
+
+.show-container .poll-settings .edit-poll > a, .delete-poll > a {
+  font-size: medium;
+}
+
+.results-wrapper {
+  margin-top: 50px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+}
+
+.table-wrapper {
+  width: 60%;
+}
+
+.pie-graph-wrapper {
+  width: 40%;
+}
+
+.results-table {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgb(45 55 68 / 10%);
+}
+
+.table-mainhead {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.results-table .table-body .table-row {
+  border-top: 1px solid var(--primary-color);
+  background-color: rgba(255,255,255,0.7);
+}
+
+.bar-graph-wrapper {
+  width: 80%;
+  margin: 5% 0 5% 10%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgb(45 55 68 / 10%);
+  padding: 1rem;
 }

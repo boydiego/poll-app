@@ -25,3 +25,17 @@
   transition: 400ms;
   color: var(--secondary-color);
 }
+
+.navbar-container .navbar .menu-navigation .logOut > i:hover {
+  transition: 400ms;
+  color: var(--secondary-color);
+}
+
+.navbar-container .navbar .menu-navigation .nav-settings > i:hover {
+  transition: 400ms;
+  color: var(--secondary-color);
+}
+
+.nav-new-poll:hover {
+  font-weight: 600;
+}

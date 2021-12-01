@@ -3,9 +3,9 @@
     <%# signed in as admin %>
     <% if current_user.admin %>
       <h1>Polls lined up</h1>
-      <ul>
+      <ul class="current-polls">
         <% @polls.each do |poll| %>
-          <li>
+          <li class="lined-up-poll">
             <%= link_to poll.title, poll %>
           </li>
         <% end %>
@@ -14,21 +14,23 @@
     <%# signed in as normal user %>
       <h1>Focus Poll</h1>
       <% current_poll = @polls.first %>
-      <%= link_to current_poll.title, current_poll %>
+      <%= link_to current_poll.title, current_poll, class: "current-focus-poll-loggedIn" %>
     <% end %>
 
   <% else %>
     <%# if not signed in %>
     <h1>Focus Poll</h1>
     <% current_poll = @polls.first %>
-    <%= link_to current_poll.title, current_poll %>
+    <span class="current-focus-poll">
+      <%= link_to current_poll.title, current_poll %>
+    </span>
   <% end %>
 
 
 
   <% if user_signed_in? %>
     <% if current_user.admin %>
-      <%= link_to "New Poll", new_poll_path %>
+      <%= link_to "New Poll", new_poll_path, class: "new-poll" %>
     <% end %>
   <% end %>
 </div>
