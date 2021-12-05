@@ -41,3 +41,8 @@
   border-top: 1px solid var(--primary-color);
   padding-top: 10px;
 }
+
+.arrow-to-newPoll{
+  display: flex;
+  justify-content: center;
+}

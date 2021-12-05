@@ -1,9 +1,9 @@
 <%= form_with model: [ @poll, @poll.answers.build ] do |f| %>
-  <p>
+  <p class="input-new-answer">
     <%= f.text_field :title %>
   </p>
-  <p>
+  <p class="create-new-answer">
     <%= f.submit %>
   </p>
-  <li><%= link_to "Go to created Poll", poll_path(@poll) %></li>
+  <li class="go-to-new-poll"><%= link_to "Go to created Poll", poll_path(@poll) %></li>
 <% end %>

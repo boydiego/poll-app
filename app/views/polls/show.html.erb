@@ -20,7 +20,7 @@
     <% end %>
   <% end %>
 
-  <h3>Select your answer:</h3>
+  <h3 class="select-answer">Select your answer:</h3>
 
   <% answers_amount = @poll.answers.size %>
   <% if answers_amount == 0%>
@@ -40,43 +40,44 @@
       <%= render @poll.answers %>
     <% end %>
   
-      <% if user_signed_in? %>
-        <% if current_user.admin %>
-          <div class="results-wrapper">
+    <% if user_signed_in? %>
+      <% if current_user.admin %>
 
-            <div class="table-wrapper">
-              <table class="results-table">
-                <thead class="table-mainhead">
-                  <tr class="table-row">
-                    <th class="table-header">Votes</th>
-                    <th class="table-header">Answers</th>
-                  </tr>
-                </thead>
+        <div class="results-wrapper">
 
-                <tbody class="table-body">
-                  <% @poll.answers.each do |answer| %>
-                    <% if answer.votes_for.size > 0 %>
-                      <tr class="table-row">
-                        <td class="answer-votes"><%= answer.votes_for.size %></td>
-                        <td class="answer-title"><%= answer.title %></td>
-                      </tr>
-                    <% end %>
+          <div class="table-wrapper">
+            <table class="results-table">
+              <thead class="table-mainhead">
+                <tr class="table-row">
+                  <th class="table-header">Votes</th>
+                  <th class="table-header">Answers</th>
+                </tr>
+              </thead>
+
+              <tbody class="table-body">
+                <% @poll.answers.each do |answer| %>
+                  <% if answer.votes_for.size > 0 %>
+                    <tr class="table-row">
+                      <td class="answer-votes"><%= answer.votes_for.size %></td>
+                      <td class="answer-title"><%= answer.title %></td>
+                    </tr>
                   <% end %>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="pie-graph-wrapper">
-              <canvas id="myChart_2" aria-label="Focus Polls Results" role="img"></canvas>
-            </div>
-
-          </div>
-          <div class="bar-graph-wrapper">
-            <canvas id="myChart" aria-label="Focus Polls Results" role="img"></canvas>
+                <% end %>
+              </tbody>
+            </table>
           </div>
 
-        <% end %>
+          <div class="pie-graph-wrapper">
+            <canvas id="myChart_2" aria-label="Focus Polls Results" role="img"></canvas>
+          </div>
+
+        </div>
+        <div class="bar-graph-wrapper">
+          <canvas id="myChart" aria-label="Focus Polls Results" role="img"></canvas>
+        </div>
+
       <% end %>
+    <% end %>
 
   <% end %>
 

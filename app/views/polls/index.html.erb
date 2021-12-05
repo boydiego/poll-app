@@ -4,6 +4,27 @@
     <% if current_user.admin %>
       <h1>Polls lined up</h1>
       <ul class="current-polls">
+        <% if @polls.length == 0 %>
+          <span class="current-focus-poll">
+            Hi <%= current_user.username %> 👋
+          </span>
+          <br>
+          <span class="current-focus-poll">
+            No polls are lined up right now.
+          </span>
+          <br> <br>
+          <span class="current-focus-poll">
+            Create a new poll.
+          </span>
+          <br> <br>
+          <span class="arrow-to-newPoll">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+          <span class="arrow-to-newPoll">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        <% end %>
+
         <% @polls.each do |poll| %>
           <li class="lined-up-poll">
             <%= link_to poll.title, poll %>
