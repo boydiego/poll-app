@@ -1,6 +1,6 @@
 # Focus Poll
 
-As an admin you can create unlimited polls with unlimited answers. But only the top poll on the list will be visible to users to have all their attention on the current poll. The idea is that usually Focus Poll would be used for important and serious questions and be a way to easily gather overview of their users/clients opinions etc.
+As an admin you can create unlimited polls with unlimited answers. But only the top poll on the list will be visible to users to have all their attention on the current poll. The idea is that usually Focus Poll would be used for important and serious questions and be a way to easily gather an overview of their users/clients opinions etc.
 Once the admin is satisfied with the amount of data gathered, which is displayed on a table and two different graphs. That poll can be removed and the next poll in line will move to the top place, such being the new one displayed to the users/clients.
 
 Overview:
