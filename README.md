@@ -23,8 +23,6 @@ How to run the app:
 
 * To sign up as a normal user create any imaginary email you please, such as yourname@email.com
 
-
-
 What I learned:
 
 During this build I learned that I need to work on planning out my strategy more efficiently. I switched direction on major points of the app a couple of times during the build and had to adjust accordingly every single time. Such as finding a way around the fact that the gem Acts-As-Votable was not the best choice for this occasion. It was the first time I ever used the gem as well and I misjudged the capabilities of it that were not suited for my project. The realization came too late though and I worked around it since I had a deadline that was just around the corner.
