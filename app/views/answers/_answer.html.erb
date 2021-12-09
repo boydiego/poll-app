@@ -1,18 +1,38 @@
 <div class="admin-show-wrapper">
-  <p class="answer-box">
-    <%= answer.title %>
 
-    <% if user_signed_in? %>
-      <% if !current_user.admin %>
-        <%= render "answers/upvote_link", answer: answer %>
+  <% if user_signed_in? %>
+    <% if !current_user.admin %>
+      <%= link_to upvote_poll_answer_path(answer), method: :patch, remote: true, id: "upvote-#{answer.id}", class: "vote-btn" do %>    
+        <p class="answer-box">
+
+          <% if user_signed_in? %>
+            <%= answer.title %>
+          <% else %>
+            <%= "Sign in to vote!" %>
+          <% end %>
+
+        </p>
       <% end %>
     <% end %>
-  </p>
+  <% else %>
+    <p class="answer-box">
+
+      <% if !user_signed_in? %>
+        <%= answer.title %>
+      <% else %>
+        <%= "Sign in to vote!" %>
+      <% end %>
+
+    </p>
+  <% end %>
 
   <% if user_signed_in? %>
     <% if current_user.admin %>
       <p class="delete-answer">
         <%= link_to 'Destroy Answer', [answer.poll, answer], method: :delete, data: { confirm: "Are you sure?"} %>
+      </p>
+      <p class="answer-box">
+        <%= answer.title %>
       </p>
     <% end %>
   <% end %>

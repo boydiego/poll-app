@@ -16,7 +16,6 @@ class AnswersController < ApplicationController
     @poll = Poll.find(params[:poll_id])
     @answer = @poll.answers.create(answer_params)
     render "_form.html.erb"
-    # redirect_to poll_path(@poll)
   end
 
   def destroy

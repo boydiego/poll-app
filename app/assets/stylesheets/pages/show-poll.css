@@ -8,7 +8,6 @@
 }
 
 .show-container .poll-settings {
-  /* padding: 0 10px 30px; */
   position: absolute;
   top: 2rem;
   left: 0;
@@ -96,9 +95,6 @@
 }
 
 .show-container .vote-btn {
-  position: absolute;
-  top: 2vh;
-  right: 3vw;
   transition: 300ms;
 }
 
@@ -119,7 +115,7 @@
   transition: 300ms;
 }
 
-.show-container .answer-box:hover, .vote-btn:hover > a, .delete-answer:hover > a {
+.show-container .answer-box:hover, .vote-btn:hover, .delete-answer:hover > a {
   transition: 300ms;
   font-weight: 600;
   font-size: x-large;

@@ -11,11 +11,6 @@
   padding: 0 10px;
 }
 
-/* .container .actions > input {
-  background-color: var(--create-btn);
-  color: white;
-} */
-
 .container .new_user, .field {
   width: 100%;
   display: flex;

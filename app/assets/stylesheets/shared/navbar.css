@@ -1,7 +1,6 @@
 .navbar-container {
   background-color: var(--primary-color);
   height: 76px;
-  /* border-bottom: solid 2.5px var(--secondary-color); */
 }
 
 .navbar-container .navbar {
