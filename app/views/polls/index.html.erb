@@ -69,8 +69,6 @@
     <% end %>
   <% end %>
 
-
-
   <% if user_signed_in? %>
     <% if current_user.admin %>
       <%= link_to "New Poll", new_poll_path, class: "new-poll" %>
